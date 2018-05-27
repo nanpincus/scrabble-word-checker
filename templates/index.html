@@ -1,0 +1,16 @@
+<!doctype html>
+<title>Scrabble Dictionary</title>
+
+<script>
+// Send the lookup request to Flask by hitting the URL <current_url>/lookup/<word>
+function look_up() {
+  var word = document.getElementById("word_lookup").value;
+  var current_url = window.location.href;
+  window.location.replace(current_url + "lookup/" + word);
+}
+</script>
+
+<h2> Scrabble Dictionary</h2>
+<input type="word_lookup" id="word_lookup">
+<button onclick="look_up()">Look-up</button>
+

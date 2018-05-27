@@ -1,0 +1,21 @@
+<!doctype html>
+<title>Scrabble Dictionary</title>
+
+
+<script>
+// Send the lookup request to Flask by hitting the URL <original_url>/lookup/<word>
+function look_up() {
+  var word = document.getElementById("word_lookup").value;
+  window.location.replace(window.location.origin + "/lookup/" + word);
+}
+</script>
+
+<h2> Scrabble Dictionary</h2>
+<input type="word_lookup" id="word_lookup">
+<button onclick="look_up()">Look-up</button>
+
+{% if match %}
+  <p>{{ word.capitalize() }} is a valid Scrabble word! It would be worth {{ points }} points.</p>
+{% else %}
+  <p>Unfortunately, {{ word }} is not a valid Scrabble word.</p>
+{% endif %}
